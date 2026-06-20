@@ -22,5 +22,53 @@
     "destination": "SIN",
     "code": "DAC → SIN",
     "price": "৳28,000"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Cox's Bazar",
+    "origin": "DAC",
+    "destination": "CXB",
+    "code": "DAC → CXB",
+    "price": "৳4,500"
+  },
+  {
+    "from": "Dhaka",
+    "to": "London",
+    "origin": "DAC",
+    "destination": "LHR",
+    "code": "DAC → LHR",
+    "price": "৳75,000"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Bangkok",
+    "origin": "DAC",
+    "destination": "BKK",
+    "code": "DAC → BKK",
+    "price": "৳22,000"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Kuala Lumpur",
+    "origin": "DAC",
+    "destination": "KUL",
+    "code": "DAC → KUL",
+    "price": "৳24,500"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Kolkata",
+    "origin": "DAC",
+    "destination": "CCU",
+    "code": "DAC → CCU",
+    "price": "৳8,500"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Jeddah",
+    "origin": "DAC",
+    "destination": "JED",
+    "code": "DAC → JED",
+    "price": "৳52,000"
   }
 ]

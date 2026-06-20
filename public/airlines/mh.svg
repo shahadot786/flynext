@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#0C2340"/>
+  <path d="M60 25 C75 25, 85 40, 85 55 C85 65, 75 75, 60 80 C45 75, 35 65, 35 55 C35 40, 45 25, 60 25Z" fill="white"/>
+  <path d="M60 32 L80 52 C70 65, 50 65, 40 52 Z" fill="#DA291C"/>
+  <path d="M52 52 L60 40 L68 52 L60 62 Z" fill="#0C2340"/>
+  <text x="60" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">MALAYSIA</text>
+</svg>

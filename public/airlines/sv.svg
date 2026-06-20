@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#005B41"/>
+  <!-- Palm tree -->
+  <path d="M60 65 L60 32" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 40 Q40 35 35 48" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 40 Q80 35 85 48" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 48 Q45 45 42 58" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 48 Q75 45 78 58" fill="none" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <!-- Swords -->
+  <path d="M45 72 L75 60" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M75 72 L45 60" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="60" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">SAUDIA</text>
+</svg>
