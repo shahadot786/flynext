@@ -79,9 +79,19 @@ export function ReviewPaymentForm({
   // Auto-fill demo card
   const fillDemoCard = () => {
     setValue("cardholderName", "DEMO PASSENGER", { shouldValidate: true });
-    setValue("cardNumber", "4111111111111111", { shouldValidate: true });
-    setValue("expiryDate", "12/28", { shouldValidate: true });
-    setValue("cvv", "123", { shouldValidate: true });
+    setValue(
+      "cardNumber",
+      process.env.NEXT_PUBLIC_DEMO_CARD_NUMBER || "4242424242424242",
+      { shouldValidate: true },
+    );
+    setValue(
+      "expiryDate",
+      process.env.NEXT_PUBLIC_DEMO_CARD_EXPIRY || "12/28",
+      { shouldValidate: true },
+    );
+    setValue("cvv", process.env.NEXT_PUBLIC_DEMO_CARD_CVV || "123", {
+      shouldValidate: true,
+    });
   };
 
   // Calculate extras total
