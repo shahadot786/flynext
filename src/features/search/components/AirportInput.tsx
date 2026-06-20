@@ -142,7 +142,7 @@ export function AirportInput({
           }}
           className={cn(
             "w-full h-full rounded-xl flex items-center px-4 cursor-pointer transition-all duration-200",
-            "bg-[#f4f5f8] border-none md:bg-white md:border md:border-gray-200 md:hover:border-gray-300",
+            "bg-white border border-gray-200 hover:border-gray-300",
             error ? "ring-1 ring-red-500 border-red-500" : "",
           )}
         >

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useMemo, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/shared/utils/cn";
 import { Button } from "@/shared/components/ui/Button";
 import { PassengerSelector } from "./PassengerSelector";
@@ -25,10 +25,12 @@ const cabinOptions: { value: CabinClass; label: string }[] = [
 
 type SearchFormProps = {
   className?: string;
+  onSubmitSuccess?: () => void;
 };
 
-export function SearchForm({ className }: SearchFormProps) {
+function SearchFormClient({ className, onSubmitSuccess }: SearchFormProps) {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   // Pre-fill defaults: DAC to CXB, tomorrow to day-after-tomorrow
   const getOffsetDateString = (offsetDays: number): string => {
@@ -42,22 +44,38 @@ export function SearchForm({ className }: SearchFormProps) {
     [],
   );
 
+  const originParam = searchParams.get("origin");
+  const destParam = searchParams.get("destination");
+  const dateParam = searchParams.get("date");
+  const returnDateParam = searchParams.get("returnDate");
+  const adultsParam = searchParams.get("adults");
+  const childrenParam = searchParams.get("children");
+  const kidsParam = searchParams.get("kids");
+  const infantsParam = searchParams.get("infants");
+  const cabinParam = searchParams.get("cabin");
+
+  const [origin, setOrigin] = useState(() => originParam || "DAC");
+  const [destination, setDestination] = useState(() => destParam || "CXB");
+  const [departureDate, setDepartureDate] = useState(
+    () => dateParam || getOffsetDateString(1),
+  );
+  const [returnDate, setReturnDate] = useState(
+    () => returnDateParam || (dateParam ? "" : getOffsetDateString(3)),
+  );
   const [tripType, setTripType] = useState<
     "one-way" | "round-trip" | "multi-city"
-  >("round-trip");
-  const [origin, setOrigin] = useState("DAC");
-  const [destination, setDestination] = useState("CXB");
-  const [departureDate, setDepartureDate] = useState(() =>
-    getOffsetDateString(1),
+  >(() =>
+    returnDateParam ? "round-trip" : dateParam ? "one-way" : "round-trip",
   );
-  const [returnDate, setReturnDate] = useState(() => getOffsetDateString(3));
-  const [passengers, setPassengers] = useState<PassengerCount>({
-    adults: 1,
-    children: 0,
-    kids: 0,
-    infants: 0,
-  });
-  const [cabin, setCabin] = useState<CabinClass>("economy");
+  const [passengers, setPassengers] = useState<PassengerCount>(() => ({
+    adults: Number(adultsParam) || 1,
+    children: Number(childrenParam) || 0,
+    kids: Number(kidsParam) || 0,
+    infants: Number(infantsParam) || 0,
+  }));
+  const [cabin, setCabin] = useState<CabinClass>(
+    () => (cabinParam as CabinClass) || "economy",
+  );
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSearching, setIsSearching] = useState(false);
 
@@ -127,6 +145,7 @@ export function SearchForm({ className }: SearchFormProps) {
     }
 
     router.push(`/search?${params.toString()}`);
+    onSubmitSuccess?.();
   }
 
   return (
@@ -211,7 +230,7 @@ export function SearchForm({ className }: SearchFormProps) {
         {/* Card 4: Combined Passenger and Cabin class (Mobile only, triggers bottom sheet) */}
         <div
           onClick={() => setIsMobilePaxOpen(true)}
-          className="flex md:hidden items-center w-full h-18 rounded-xl bg-[#f4f5f8] relative cursor-pointer"
+          className="flex md:hidden items-center w-full h-18 rounded-xl bg-white border border-gray-200 relative cursor-pointer"
         >
           {/* Passenger Selector */}
           <div className="flex-1 h-full pointer-events-none">
@@ -239,7 +258,7 @@ export function SearchForm({ className }: SearchFormProps) {
           <Button
             type="submit"
             isLoading={isSearching}
-            className="w-full lg:w-auto h-12 lg:h-18 lg:aspect-square flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md shadow-blue-200/50 hover:shadow-lg transition-all cursor-pointer"
+            className="w-full lg:w-auto h-10 lg:h-14 lg:aspect-square flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md shadow-blue-200/50 hover:shadow-lg transition-all cursor-pointer"
           >
             {!isSearching && (
               <svg
@@ -307,5 +326,19 @@ export function SearchForm({ className }: SearchFormProps) {
         />
       )}
     </form>
+  );
+}
+
+export function SearchForm(props: SearchFormProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="h-70 w-full rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-200/90 animate-pulse flex items-center justify-center text-gray-400 font-medium">
+          Loading search form...
+        </div>
+      }
+    >
+      <SearchFormClient {...props} />
+    </Suspense>
   );
 }
