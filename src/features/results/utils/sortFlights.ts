@@ -17,6 +17,18 @@ function compareByDeparture(a: Flight, b: Flight): number {
   return new Date(timeA).getTime() - new Date(timeB).getTime();
 }
 
+function compareByArrival(a: Flight, b: Flight): number {
+  const lastSegA = a.segments[a.segments.length - 1];
+  const lastSegB = b.segments[b.segments.length - 1];
+  const timeA = lastSegA?.arrival?.time ?? "";
+  const timeB = lastSegB?.arrival?.time ?? "";
+  return new Date(timeA).getTime() - new Date(timeB).getTime();
+}
+
+function compareByStops(a: Flight, b: Flight): number {
+  return a.stops.length - b.stops.length;
+}
+
 // ─── Comparator Map ────────────────────────────────────────
 
 const SORT_COMPARATORS: Record<SortOption, (a: Flight, b: Flight) => number> = {
@@ -25,6 +37,8 @@ const SORT_COMPARATORS: Record<SortOption, (a: Flight, b: Flight) => number> = {
   duration_asc: (a, b) => compareByDuration(a, b),
   departure_asc: (a, b) => compareByDeparture(a, b),
   departure_desc: (a, b) => compareByDeparture(b, a),
+  arrival_asc: (a, b) => compareByArrival(a, b),
+  stops_asc: (a, b) => compareByStops(a, b),
 };
 
 // ─── Main Sort Function ────────────────────────────────────

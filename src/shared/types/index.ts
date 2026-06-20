@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 // ─── Airport ───────────────────────────────────────────────
 
@@ -25,7 +25,7 @@ export type Airline = z.infer<typeof AirlineSchema>;
 
 export const MoneySchema = z.object({
   amount: z.number(),
-  currency: z.string().default('BDT'),
+  currency: z.string().default("BDT"),
 });
 
 export type Money = z.infer<typeof MoneySchema>;
@@ -50,7 +50,12 @@ export type FlightSegment = z.infer<typeof FlightSegmentSchema>;
 
 // ─── Flight ────────────────────────────────────────────────
 
-export const CabinClassSchema = z.enum(['economy', 'premium-economy', 'business', 'first']);
+export const CabinClassSchema = z.enum([
+  "economy",
+  "premium-economy",
+  "business",
+  "first",
+]);
 export type CabinClass = z.infer<typeof CabinClassSchema>;
 
 export const FlightSchema = z.object({
@@ -60,7 +65,7 @@ export const FlightSchema = z.object({
     z.object({
       airport: AirportSchema,
       durationMinutes: z.number(),
-    })
+    }),
   ),
   totalDurationMinutes: z.number(),
   price: MoneySchema,
@@ -72,15 +77,15 @@ export type Flight = z.infer<typeof FlightSchema>;
 
 // ─── Passenger ─────────────────────────────────────────────
 
-export const PassengerTypeSchema = z.enum(['adult', 'child', 'infant']);
+export const PassengerTypeSchema = z.enum(["adult", "child", "infant"]);
 export type PassengerType = z.infer<typeof PassengerTypeSchema>;
 
 export const PassengerSchema = z.object({
   type: PassengerTypeSchema,
-  firstName: z.string().min(2, 'At least 2 characters').max(100, 'Too long'),
-  lastName: z.string().min(2, 'At least 2 characters').max(50, 'Too long'),
+  firstName: z.string().min(2, "At least 2 characters").max(100, "Too long"),
+  lastName: z.string().min(2, "At least 2 characters").max(50, "Too long"),
   dateOfBirth: z.string(),
-  nationality: z.string().min(2, 'Required'),
+  nationality: z.string().min(2, "Required"),
   passportNumber: z.string().optional(),
   passportExpiry: z.string().optional(),
 });
@@ -101,17 +106,17 @@ export type PassengerCount = z.infer<typeof PassengerCountSchema>;
 // ─── Meal & Extras ─────────────────────────────────────────
 
 export const MealTypeSchema = z.enum([
-  'standard',
-  'vegetarian',
-  'vegan',
-  'halal',
-  'kosher',
-  'none',
+  "standard",
+  "vegetarian",
+  "vegan",
+  "halal",
+  "kosher",
+  "none",
 ]);
 export type MealType = z.infer<typeof MealTypeSchema>;
 
 export const PassengerExtrasSchema = z.object({
-  mealType: MealTypeSchema.default('standard'),
+  mealType: MealTypeSchema.default("standard"),
   wheelchairRequired: z.boolean().default(false),
   wheelchairNotes: z.string().optional(),
 });
@@ -121,18 +126,22 @@ export type PassengerExtras = z.infer<typeof PassengerExtrasSchema>;
 // ─── Contact Info ──────────────────────────────────────────
 
 export const ContactInfoSchema = z.object({
-  email: z.string().email('Invalid email address'),
+  email: z.string().email("Invalid email address"),
   phone: z
     .string()
-    .min(11, 'Phone number too short')
-    .regex(/^\+?[0-9\s\-()]+$/, 'Invalid phone number'),
+    .min(11, "Phone number too short")
+    .regex(/^\+?[0-9\s\-()]+$/, "Invalid phone number"),
 });
 
 export type ContactInfo = z.infer<typeof ContactInfoSchema>;
 
 // ─── Booking ───────────────────────────────────────────────
 
-export const BookingStatusSchema = z.enum(['confirmed', 'pending', 'cancelled']);
+export const BookingStatusSchema = z.enum([
+  "confirmed",
+  "pending",
+  "cancelled",
+]);
 export type BookingStatus = z.infer<typeof BookingStatusSchema>;
 
 export const BookingSchema = z.object({
@@ -177,16 +186,23 @@ export type BookingResponse = z.infer<typeof BookingResponseSchema>;
 
 // ─── Filters & Sorting ────────────────────────────────────
 
-export const TimeRangeSchema = z.enum(['morning', 'afternoon', 'evening']);
+export const TimeRangeSchema = z.enum([
+  "early_morning",
+  "morning",
+  "afternoon",
+  "evening",
+]);
 export type TimeRange = z.infer<typeof TimeRangeSchema>;
 
 export const TIME_RANGE_LABELS: Record<TimeRange, string> = {
-  morning: '06:00 – 12:00',
-  afternoon: '12:00 – 18:00',
-  evening: '18:00 – 24:00',
+  early_morning: "12:00 AM – 06:00 AM",
+  morning: "06:00 AM – 12:00 PM",
+  afternoon: "12:00 PM – 06:00 PM",
+  evening: "06:00 PM – 12:00 AM",
 };
 
 export const TIME_RANGE_HOURS: Record<TimeRange, [number, number]> = {
+  early_morning: [0, 6],
   morning: [6, 12],
   afternoon: [12, 18],
   evening: [18, 24],
@@ -209,20 +225,24 @@ export const DEFAULT_FILTERS: FlightFilters = {
 };
 
 export const SortOptionSchema = z.enum([
-  'price_asc',
-  'price_desc',
-  'duration_asc',
-  'departure_asc',
-  'departure_desc',
+  "price_asc",
+  "price_desc",
+  "duration_asc",
+  "departure_asc",
+  "departure_desc",
+  "arrival_asc",
+  "stops_asc",
 ]);
 export type SortOption = z.infer<typeof SortOptionSchema>;
 
 export const SORT_LABELS: Record<SortOption, string> = {
-  price_asc: 'Price: Low to High',
-  price_desc: 'Price: High to Low',
-  duration_asc: 'Duration: Shortest',
-  departure_asc: 'Departure: Earliest',
-  departure_desc: 'Departure: Latest',
+  price_asc: "Price: Low to High",
+  price_desc: "Price: High to Low",
+  duration_asc: "Duration: Shortest",
+  departure_asc: "Departure: Earliest",
+  departure_desc: "Departure: Latest",
+  arrival_asc: "Arrival: Earliest",
+  stops_asc: "Stops: Fewest",
 };
 
 // ─── Search Params ─────────────────────────────────────────
@@ -241,12 +261,12 @@ export type FlightSearchParams = {
 
 // ─── Error Types ───────────────────────────────────────────
 
-export type ErrorSeverity = 'recoverable' | 'partial' | 'fatal';
+export type ErrorSeverity = "recoverable" | "partial" | "fatal";
 
 export const ERROR_MESSAGES: Record<number, string> = {
-  400: 'Please check your search and try again.',
-  404: 'No flights found for this route.',
-  409: 'Sorry, this seat is no longer available. Please select another flight.',
-  500: 'Something went wrong on our end. We\'re working on it.',
-  503: 'Flight search is temporarily unavailable. Please try again in a moment.',
+  400: "Please check your search and try again.",
+  404: "No flights found for this route.",
+  409: "Sorry, this seat is no longer available. Please select another flight.",
+  500: "Something went wrong on our end. We're working on it.",
+  503: "Flight search is temporarily unavailable. Please try again in a moment.",
 };

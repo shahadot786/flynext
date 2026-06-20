@@ -25,9 +25,10 @@ const cabinOptions: { value: CabinClass; label: string }[] = [
 
 type SearchFormProps = {
   className?: string;
+  onSubmitSuccess?: () => void;
 };
 
-function SearchFormClient({ className }: SearchFormProps) {
+function SearchFormClient({ className, onSubmitSuccess }: SearchFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -144,6 +145,7 @@ function SearchFormClient({ className }: SearchFormProps) {
     }
 
     router.push(`/search?${params.toString()}`);
+    onSubmitSuccess?.();
   }
 
   return (
@@ -228,7 +230,7 @@ function SearchFormClient({ className }: SearchFormProps) {
         {/* Card 4: Combined Passenger and Cabin class (Mobile only, triggers bottom sheet) */}
         <div
           onClick={() => setIsMobilePaxOpen(true)}
-          className="flex md:hidden items-center w-full h-18 rounded-xl bg-[#f4f5f8] relative cursor-pointer"
+          className="flex md:hidden items-center w-full h-18 rounded-xl bg-white border border-gray-200 relative cursor-pointer"
         >
           {/* Passenger Selector */}
           <div className="flex-1 h-full pointer-events-none">
@@ -256,7 +258,7 @@ function SearchFormClient({ className }: SearchFormProps) {
           <Button
             type="submit"
             isLoading={isSearching}
-            className="w-full lg:w-auto h-12 lg:h-18 lg:aspect-square flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md shadow-blue-200/50 hover:shadow-lg transition-all cursor-pointer"
+            className="w-full lg:w-auto h-10 lg:h-14 lg:aspect-square flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md shadow-blue-200/50 hover:shadow-lg transition-all cursor-pointer"
           >
             {!isSearching && (
               <svg

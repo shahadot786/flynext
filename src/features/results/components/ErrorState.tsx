@@ -59,7 +59,10 @@ export function ErrorState({ error, onRetry }: ErrorStateProps) {
         </Button>
 
         <Link href="/">
-          <Button variant="secondary" size="md" className="cursor-pointer">
+          <Button
+            size="md"
+            className="cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white hover:text-white active:bg-emerald-800 shadow-sm"
+          >
             Modify Search
           </Button>
         </Link>

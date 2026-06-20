@@ -58,7 +58,7 @@ export function DatePicker({
       <div
         className={cn(
           "absolute inset-0 w-full h-full rounded-xl flex items-center px-4 transition-all duration-200 pointer-events-none",
-          "bg-[#f4f5f8] border-none md:bg-white md:border md:border-gray-200 md:hover:border-gray-300",
+          "bg-white border border-gray-200 hover:border-gray-300",
           disabled
             ? "opacity-60 bg-gray-50/50"
             : error

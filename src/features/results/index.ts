@@ -17,3 +17,4 @@ export { FilterPanel } from "./components/FilterPanel";
 export { SortBar } from "./components/SortBar";
 export { EmptyState } from "./components/EmptyState";
 export { ErrorState } from "./components/ErrorState";
+export { ModifySearchTopSheet } from "./components/ModifySearchTopSheet";

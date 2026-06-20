@@ -1,8 +1,17 @@
+import Link from "next/link";
 import { SearchForm } from "@/features/search";
 import popularRoutes from "@/data/popularRoutes.json";
 import features from "@/data/features.json";
 
 export default function Home() {
+  // Pre-generate departure date for popular routes search links (7 days from now)
+  const getFutureDate = (offsetDays: number): string => {
+    const d = new Date();
+    d.setDate(d.getDate() + offsetDays);
+    return d.toISOString().split("T")[0] ?? "";
+  };
+  const targetDate = getFutureDate(7);
+
   return (
     <div className="flex flex-col flex-1">
       {/* Hero Video Banner Section */}
@@ -53,29 +62,33 @@ export default function Home() {
             Most searched flight routes this month
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularRoutes?.map((route) => (
-              <div
-                key={route.code}
-                className="group relative rounded-xl border border-gray-200 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] hover:border-blue-200 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer"
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-500">{route.from}</p>
-                    <p className="text-lg font-semibold text-gray-900">
-                      {route.code}
-                    </p>
-                    <p className="text-sm text-gray-500">{route.to}</p>
+            {popularRoutes.map((route) => {
+              const searchUrl = `/search?origin=${route.origin}&destination=${route.destination}&date=${targetDate}&adults=1&children=0&kids=0&infants=0&cabin=economy`;
+              return (
+                <Link
+                  key={route.code}
+                  href={searchUrl}
+                  className="group relative block rounded-xl border border-gray-200 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] hover:border-blue-200 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-500">{route.from}</p>
+                      <p className="text-lg font-semibold text-gray-900">
+                        {route.code}
+                      </p>
+                      <p className="text-sm text-gray-500">{route.to}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm text-gray-500">From</p>
+                      <p className="text-xl font-bold text-primary-500">
+                        {route.price}
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-500">From</p>
-                    <p className="text-xl font-bold text-primary-500">
-                      {route.price}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 rounded-xl ring-2 ring-primary-500 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              </div>
-            ))}
+                  <div className="absolute inset-0 rounded-xl ring-2 ring-primary-500 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -87,7 +100,7 @@ export default function Home() {
             Why Choose FlyNext?
           </h2>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {features?.map((feature) => (
+            {features.map((feature) => (
               <div
                 key={feature.title}
                 className="flex flex-col items-center text-center p-6 rounded-xl bg-white border border-gray-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
