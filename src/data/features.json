@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "✈️",
+    "title": "Best Prices",
+    "desc": "Compare fares across top airlines and find the lowest prices for your route."
+  },
+  {
+    "icon": "⚡",
+    "title": "Instant Booking",
+    "desc": "Book your flight in under 2 minutes with our streamlined booking flow."
+  },
+  {
+    "icon": "🛡️",
+    "title": "Secure Payment",
+    "desc": "Your payment information is protected with industry-standard encryption."
+  }
+]

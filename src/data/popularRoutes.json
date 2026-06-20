@@ -1,0 +1,20 @@
+[
+  {
+    "from": "Dhaka",
+    "to": "Dubai",
+    "code": "DAC → DXB",
+    "price": "৳32,500"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Doha",
+    "code": "DAC → DOH",
+    "price": "৳38,000"
+  },
+  {
+    "from": "Dhaka",
+    "to": "Singapore",
+    "code": "DAC → SIN",
+    "price": "৳28,000"
+  }
+]

@@ -94,3 +94,5 @@ Mock handlers are in `mocks/handlers.ts`. Do not make real API calls in tests.
 - Do not use `React.FC` — use plain function declarations with typed props.
 - Do not add global state for things already owned by URL or TanStack Query.
 - Do not install new dependencies without checking if the existing stack covers the need.
+- Do not create any data array or object directly to the components, create json file in the src/data then use it.
+- Always use optional chaining where it should be need.
