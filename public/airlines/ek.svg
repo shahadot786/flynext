@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#D71921"/>
+  <path d="M30 58 C40 40, 55 30, 60 30 C65 30, 75 35, 80 42 L85 48 C82 45, 75 40, 68 40 C60 40, 50 48, 45 55 L30 58Z" fill="white"/>
+  <path d="M80 42 L90 35 L85 48 Z" fill="white"/>
+  <path d="M35 62 C45 55, 55 50, 60 50 C65 50, 72 53, 76 58 L78 62 C75 59, 70 56, 65 56 C58 56, 48 62, 42 68 L35 62Z" fill="#FFD700"/>
+  <text x="60" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">EMIRATES</text>
+</svg>

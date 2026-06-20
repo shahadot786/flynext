@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#E8362A"/>
+  <path d="M30 65 L55 40 L60 45 L40 62 L90 62 L90 68 L40 68 L60 85 L55 90 L30 65Z" fill="white"/>
+  <circle cx="75" cy="42" r="12" fill="white"/>
+  <circle cx="75" cy="42" r="8" fill="#E8362A"/>
+  <text x="60" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">AIR ARABIA</text>
+</svg>
