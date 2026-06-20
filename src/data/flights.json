@@ -1,0 +1,659 @@
+[
+  {
+    "id": "FL-CXB-001",
+    "segments": [{
+      "flightNumber": "BG-433",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-06-20T10:30:00" },
+      "arrival": { "airport": { "code": "CXB", "name": "Cox's Bazar Airport", "city": "Cox's Bazar", "country": "Bangladesh" }, "time": "2026-06-20T11:40:00" },
+      "durationMinutes": 70
+    }],
+    "stops": [],
+    "totalDurationMinutes": 70,
+    "price": { "amount": 6500, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 18
+  },
+  {
+    "id": "FL-CXB-002",
+    "segments": [{
+      "flightNumber": "BG-434",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "CXB", "name": "Cox's Bazar Airport", "city": "Cox's Bazar", "country": "Bangladesh" }, "time": "2026-06-22T14:15:00" },
+      "arrival": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-06-22T15:25:00" },
+      "durationMinutes": 70
+    }],
+    "stops": [],
+    "totalDurationMinutes": 70,
+    "price": { "amount": 6800, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 12
+  },
+  {
+    "id": "FL-CXB-003",
+    "segments": [{
+      "flightNumber": "BG-435",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-06-20T16:00:00" },
+      "arrival": { "airport": { "code": "CXB", "name": "Cox's Bazar Airport", "city": "Cox's Bazar", "country": "Bangladesh" }, "time": "2026-06-20T17:10:00" },
+      "durationMinutes": 70
+    }],
+    "stops": [],
+    "totalDurationMinutes": 70,
+    "price": { "amount": 12000, "currency": "BDT" },
+    "cabin": "business",
+    "seatsAvailable": 4
+  },
+  {
+    "id": "FL-CXB-004",
+    "segments": [{
+      "flightNumber": "BG-436",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "CXB", "name": "Cox's Bazar Airport", "city": "Cox's Bazar", "country": "Bangladesh" }, "time": "2026-06-22T19:30:00" },
+      "arrival": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-06-22T20:40:00" },
+      "durationMinutes": 70
+    }],
+    "stops": [],
+    "totalDurationMinutes": 70,
+    "price": { "amount": 12500, "currency": "BDT" },
+    "cabin": "business",
+    "seatsAvailable": 6
+  },
+  {
+    "id": "FL-001",
+    "segments": [{
+      "flightNumber": "BG-347",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T08:00:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T12:30:00" },
+      "durationMinutes": 330
+    }],
+    "stops": [],
+    "totalDurationMinutes": 330,
+    "price": { "amount": 32500, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 14
+  },
+  {
+    "id": "FL-002",
+    "segments": [{
+      "flightNumber": "EK-585",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T10:15:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T14:00:00" },
+      "durationMinutes": 285
+    }],
+    "stops": [],
+    "totalDurationMinutes": 285,
+    "price": { "amount": 48000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 22
+  },
+  {
+    "id": "FL-003",
+    "segments": [{
+      "flightNumber": "G9-502",
+      "airline": { "code": "G9", "name": "Air Arabia", "logo": "/airlines/g9.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T06:30:00" },
+      "arrival": { "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "time": "2026-07-01T10:00:00" },
+      "durationMinutes": 270
+    }, {
+      "flightNumber": "G9-110",
+      "airline": { "code": "G9", "name": "Air Arabia", "logo": "/airlines/g9.svg" },
+      "departure": { "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "time": "2026-07-01T12:00:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T12:45:00" },
+      "durationMinutes": 45
+    }],
+    "stops": [{ "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "durationMinutes": 120 }],
+    "totalDurationMinutes": 435,
+    "price": { "amount": 28000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 8
+  },
+  {
+    "id": "FL-004",
+    "segments": [{
+      "flightNumber": "QR-635",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T14:30:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T17:45:00" },
+      "durationMinutes": 315
+    }, {
+      "flightNumber": "QR-014",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T19:30:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T20:45:00" },
+      "durationMinutes": 75
+    }],
+    "stops": [{ "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "durationMinutes": 105 }],
+    "totalDurationMinutes": 495,
+    "price": { "amount": 42000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 30
+  },
+  {
+    "id": "FL-005",
+    "segments": [{
+      "flightNumber": "EK-583",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T22:00:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-02T01:30:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 52000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 6
+  },
+  {
+    "id": "FL-006",
+    "segments": [{
+      "flightNumber": "BG-401",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T16:00:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T20:15:00" },
+      "durationMinutes": 315
+    }],
+    "stops": [],
+    "totalDurationMinutes": 315,
+    "price": { "amount": 35000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 18
+  },
+  {
+    "id": "FL-007",
+    "segments": [{
+      "flightNumber": "EK-585",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T10:15:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T14:00:00" },
+      "durationMinutes": 285
+    }],
+    "stops": [],
+    "totalDurationMinutes": 285,
+    "price": { "amount": 95000, "currency": "BDT" },
+    "cabin": "business",
+    "seatsAvailable": 4
+  },
+  {
+    "id": "FL-008",
+    "segments": [{
+      "flightNumber": "QR-637",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T09:00:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T12:00:00" },
+      "durationMinutes": 300
+    }],
+    "stops": [],
+    "totalDurationMinutes": 300,
+    "price": { "amount": 38000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 25
+  },
+  {
+    "id": "FL-009",
+    "segments": [{
+      "flightNumber": "QR-639",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T20:00:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T23:15:00" },
+      "durationMinutes": 315
+    }],
+    "stops": [],
+    "totalDurationMinutes": 315,
+    "price": { "amount": 40000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 12
+  },
+  {
+    "id": "FL-010",
+    "segments": [{
+      "flightNumber": "QR-637",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T09:00:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T12:00:00" },
+      "durationMinutes": 300
+    }],
+    "stops": [],
+    "totalDurationMinutes": 300,
+    "price": { "amount": 120000, "currency": "BDT" },
+    "cabin": "business",
+    "seatsAvailable": 6
+  },
+  {
+    "id": "FL-011",
+    "segments": [{
+      "flightNumber": "BG-131",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T07:00:00" },
+      "arrival": { "airport": { "code": "SIN", "name": "Changi Airport", "city": "Singapore", "country": "Singapore" }, "time": "2026-07-01T13:30:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 28000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 20
+  },
+  {
+    "id": "FL-012",
+    "segments": [{
+      "flightNumber": "EK-585",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T10:15:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T14:00:00" },
+      "durationMinutes": 285
+    }, {
+      "flightNumber": "EK-404",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T16:30:00" },
+      "arrival": { "airport": { "code": "SIN", "name": "Changi Airport", "city": "Singapore", "country": "Singapore" }, "time": "2026-07-02T03:30:00" },
+      "durationMinutes": 420
+    }],
+    "stops": [{ "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "durationMinutes": 150 }],
+    "totalDurationMinutes": 855,
+    "price": { "amount": 45000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 15
+  },
+  {
+    "id": "FL-013",
+    "segments": [{
+      "flightNumber": "G9-502",
+      "airline": { "code": "G9", "name": "Air Arabia", "logo": "/airlines/g9.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T06:30:00" },
+      "arrival": { "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "time": "2026-07-01T10:00:00" },
+      "durationMinutes": 270
+    }, {
+      "flightNumber": "G9-720",
+      "airline": { "code": "G9", "name": "Air Arabia", "logo": "/airlines/g9.svg" },
+      "departure": { "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "time": "2026-07-01T13:00:00" },
+      "arrival": { "airport": { "code": "KUL", "name": "Kuala Lumpur International Airport", "city": "Kuala Lumpur", "country": "Malaysia" }, "time": "2026-07-02T01:00:00" },
+      "durationMinutes": 420
+    }],
+    "stops": [{ "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "durationMinutes": 180 }],
+    "totalDurationMinutes": 870,
+    "price": { "amount": 30000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 10
+  },
+  {
+    "id": "FL-014",
+    "segments": [{
+      "flightNumber": "BG-089",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T11:00:00" },
+      "arrival": { "airport": { "code": "KUL", "name": "Kuala Lumpur International Airport", "city": "Kuala Lumpur", "country": "Malaysia" }, "time": "2026-07-01T17:30:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 29000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 16
+  },
+  {
+    "id": "FL-015",
+    "segments": [{
+      "flightNumber": "BG-097",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T09:30:00" },
+      "arrival": { "airport": { "code": "BKK", "name": "Suvarnabhumi Airport", "city": "Bangkok", "country": "Thailand" }, "time": "2026-07-01T13:15:00" },
+      "durationMinutes": 225
+    }],
+    "stops": [],
+    "totalDurationMinutes": 225,
+    "price": { "amount": 26000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 28
+  },
+  {
+    "id": "FL-016",
+    "segments": [{
+      "flightNumber": "QR-641",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T14:30:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T17:45:00" },
+      "durationMinutes": 315
+    }, {
+      "flightNumber": "QR-848",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T20:30:00" },
+      "arrival": { "airport": { "code": "BKK", "name": "Suvarnabhumi Airport", "city": "Bangkok", "country": "Thailand" }, "time": "2026-07-02T07:30:00" },
+      "durationMinutes": 420
+    }],
+    "stops": [{ "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "durationMinutes": 165 }],
+    "totalDurationMinutes": 900,
+    "price": { "amount": 38000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 19
+  },
+  {
+    "id": "FL-017",
+    "segments": [{
+      "flightNumber": "BG-757",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T08:30:00" },
+      "arrival": { "airport": { "code": "CCU", "name": "Netaji Subhas Chandra Bose International Airport", "city": "Kolkata", "country": "India" }, "time": "2026-07-01T09:30:00" },
+      "durationMinutes": 60
+    }],
+    "stops": [],
+    "totalDurationMinutes": 60,
+    "price": { "amount": 12000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 35
+  },
+  {
+    "id": "FL-018",
+    "segments": [{
+      "flightNumber": "BG-759",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T17:00:00" },
+      "arrival": { "airport": { "code": "CCU", "name": "Netaji Subhas Chandra Bose International Airport", "city": "Kolkata", "country": "India" }, "time": "2026-07-01T18:00:00" },
+      "durationMinutes": 60
+    }],
+    "stops": [],
+    "totalDurationMinutes": 60,
+    "price": { "amount": 13500, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 22
+  },
+  {
+    "id": "FL-019",
+    "segments": [{
+      "flightNumber": "EK-585",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T10:15:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T14:00:00" },
+      "durationMinutes": 285
+    }, {
+      "flightNumber": "EK-001",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T17:00:00" },
+      "arrival": { "airport": { "code": "LHR", "name": "Heathrow Airport", "city": "London", "country": "United Kingdom" }, "time": "2026-07-01T21:30:00" },
+      "durationMinutes": 450
+    }],
+    "stops": [{ "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "durationMinutes": 180 }],
+    "totalDurationMinutes": 915,
+    "price": { "amount": 85000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 7
+  },
+  {
+    "id": "FL-020",
+    "segments": [{
+      "flightNumber": "QR-635",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T14:30:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T17:45:00" },
+      "durationMinutes": 315
+    }, {
+      "flightNumber": "QR-003",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T20:00:00" },
+      "arrival": { "airport": { "code": "LHR", "name": "Heathrow Airport", "city": "London", "country": "United Kingdom" }, "time": "2026-07-02T01:00:00" },
+      "durationMinutes": 420
+    }],
+    "stops": [{ "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "durationMinutes": 135 }],
+    "totalDurationMinutes": 870,
+    "price": { "amount": 78000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 11
+  },
+  {
+    "id": "FL-021",
+    "segments": [{
+      "flightNumber": "BG-077",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T21:30:00" },
+      "arrival": { "airport": { "code": "LHR", "name": "Heathrow Airport", "city": "London", "country": "United Kingdom" }, "time": "2026-07-02T05:30:00" },
+      "durationMinutes": 660
+    }],
+    "stops": [],
+    "totalDurationMinutes": 660,
+    "price": { "amount": 72000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 9
+  },
+  {
+    "id": "FL-022",
+    "segments": [{
+      "flightNumber": "EK-585",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T10:15:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T14:00:00" },
+      "durationMinutes": 285
+    }, {
+      "flightNumber": "EK-001",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T17:00:00" },
+      "arrival": { "airport": { "code": "LHR", "name": "Heathrow Airport", "city": "London", "country": "United Kingdom" }, "time": "2026-07-01T21:30:00" },
+      "durationMinutes": 450
+    }],
+    "stops": [{ "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "durationMinutes": 180 }],
+    "totalDurationMinutes": 915,
+    "price": { "amount": 180000, "currency": "BDT" },
+    "cabin": "first",
+    "seatsAvailable": 2
+  },
+  {
+    "id": "FL-023",
+    "segments": [{
+      "flightNumber": "BG-321",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T12:00:00" },
+      "arrival": { "airport": { "code": "MLE", "name": "Velana International Airport", "city": "Malé", "country": "Maldives" }, "time": "2026-07-01T15:30:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 34000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 14
+  },
+  {
+    "id": "FL-024",
+    "segments": [{
+      "flightNumber": "G9-504",
+      "airline": { "code": "G9", "name": "Air Arabia", "logo": "/airlines/g9.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T15:00:00" },
+      "arrival": { "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "time": "2026-07-01T18:30:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 25000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 32
+  },
+  {
+    "id": "FL-025",
+    "segments": [{
+      "flightNumber": "EK-587",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T06:00:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T09:45:00" },
+      "durationMinutes": 285
+    }],
+    "stops": [],
+    "totalDurationMinutes": 285,
+    "price": { "amount": 46000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 18
+  },
+  {
+    "id": "FL-026",
+    "segments": [{
+      "flightNumber": "BG-351",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T19:00:00" },
+      "arrival": { "airport": { "code": "JED", "name": "King Abdulaziz International Airport", "city": "Jeddah", "country": "Saudi Arabia" }, "time": "2026-07-02T00:00:00" },
+      "durationMinutes": 360
+    }],
+    "stops": [],
+    "totalDurationMinutes": 360,
+    "price": { "amount": 42000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 24
+  },
+  {
+    "id": "FL-027",
+    "segments": [{
+      "flightNumber": "QR-639",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T20:00:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T23:15:00" },
+      "durationMinutes": 315
+    }, {
+      "flightNumber": "QR-702",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-02T02:00:00" },
+      "arrival": { "airport": { "code": "IST", "name": "Istanbul Airport", "city": "Istanbul", "country": "Turkey" }, "time": "2026-07-02T07:00:00" },
+      "durationMinutes": 300
+    }],
+    "stops": [{ "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "durationMinutes": 165 }],
+    "totalDurationMinutes": 780,
+    "price": { "amount": 55000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 16
+  },
+  {
+    "id": "FL-028",
+    "segments": [{
+      "flightNumber": "BG-099",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T23:00:00" },
+      "arrival": { "airport": { "code": "CMB", "name": "Bandaranaike International Airport", "city": "Colombo", "country": "Sri Lanka" }, "time": "2026-07-02T02:30:00" },
+      "durationMinutes": 210
+    }],
+    "stops": [],
+    "totalDurationMinutes": 210,
+    "price": { "amount": 22000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 30
+  },
+  {
+    "id": "FL-029",
+    "segments": [{
+      "flightNumber": "EK-583",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T22:00:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-02T01:30:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 105000, "currency": "BDT" },
+    "cabin": "business",
+    "seatsAvailable": 3
+  },
+  {
+    "id": "FL-030",
+    "segments": [{
+      "flightNumber": "BG-761",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T13:00:00" },
+      "arrival": { "airport": { "code": "DEL", "name": "Indira Gandhi International Airport", "city": "Delhi", "country": "India" }, "time": "2026-07-01T15:30:00" },
+      "durationMinutes": 150
+    }],
+    "stops": [],
+    "totalDurationMinutes": 150,
+    "price": { "amount": 18000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 40
+  },
+  {
+    "id": "FL-031",
+    "segments": [{
+      "flightNumber": "QR-637",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T09:00:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T12:00:00" },
+      "durationMinutes": 300
+    }, {
+      "flightNumber": "QR-700",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T14:30:00" },
+      "arrival": { "airport": { "code": "JFK", "name": "John F. Kennedy International Airport", "city": "New York", "country": "United States" }, "time": "2026-07-01T21:00:00" },
+      "durationMinutes": 750
+    }],
+    "stops": [{ "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "durationMinutes": 150 }],
+    "totalDurationMinutes": 1200,
+    "price": { "amount": 110000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 5
+  },
+  {
+    "id": "FL-032",
+    "segments": [{
+      "flightNumber": "EK-585",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T10:15:00" },
+      "arrival": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T14:00:00" },
+      "durationMinutes": 285
+    }, {
+      "flightNumber": "EK-201",
+      "airline": { "code": "EK", "name": "Emirates", "logo": "/airlines/ek.svg" },
+      "departure": { "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "time": "2026-07-01T16:00:00" },
+      "arrival": { "airport": { "code": "JFK", "name": "John F. Kennedy International Airport", "city": "New York", "country": "United States" }, "time": "2026-07-01T22:30:00" },
+      "durationMinutes": 810
+    }],
+    "stops": [{ "airport": { "code": "DXB", "name": "Dubai International Airport", "city": "Dubai", "country": "UAE" }, "durationMinutes": 120 }],
+    "totalDurationMinutes": 1215,
+    "price": { "amount": 125000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 8
+  },
+  {
+    "id": "FL-033",
+    "segments": [{
+      "flightNumber": "BG-505",
+      "airline": { "code": "BG", "name": "Biman Bangladesh Airlines", "logo": "/airlines/bg.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T07:30:00" },
+      "arrival": { "airport": { "code": "KTM", "name": "Tribhuvan International Airport", "city": "Kathmandu", "country": "Nepal" }, "time": "2026-07-01T09:00:00" },
+      "durationMinutes": 90
+    }],
+    "stops": [],
+    "totalDurationMinutes": 90,
+    "price": { "amount": 15000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 26
+  },
+  {
+    "id": "FL-034",
+    "segments": [{
+      "flightNumber": "G9-506",
+      "airline": { "code": "G9", "name": "Air Arabia", "logo": "/airlines/g9.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T12:45:00" },
+      "arrival": { "airport": { "code": "SHJ", "name": "Sharjah International Airport", "city": "Sharjah", "country": "UAE" }, "time": "2026-07-01T16:15:00" },
+      "durationMinutes": 270
+    }],
+    "stops": [],
+    "totalDurationMinutes": 270,
+    "price": { "amount": 23000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 21
+  },
+  {
+    "id": "FL-035",
+    "segments": [{
+      "flightNumber": "QR-637",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DAC", "name": "Hazrat Shahjalal International Airport", "city": "Dhaka", "country": "Bangladesh" }, "time": "2026-07-01T09:00:00" },
+      "arrival": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T12:00:00" },
+      "durationMinutes": 300
+    }, {
+      "flightNumber": "QR-844",
+      "airline": { "code": "QR", "name": "Qatar Airways", "logo": "/airlines/qr.svg" },
+      "departure": { "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "time": "2026-07-01T14:00:00" },
+      "arrival": { "airport": { "code": "SIN", "name": "Changi Airport", "city": "Singapore", "country": "Singapore" }, "time": "2026-07-02T02:30:00" },
+      "durationMinutes": 450
+    }],
+    "stops": [{ "airport": { "code": "DOH", "name": "Hamad International Airport", "city": "Doha", "country": "Qatar" }, "durationMinutes": 120 }],
+    "totalDurationMinutes": 870,
+    "price": { "amount": 48000, "currency": "BDT" },
+    "cabin": "economy",
+    "seatsAvailable": 13
+  }
+]
