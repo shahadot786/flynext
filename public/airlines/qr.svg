@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#5C0632"/>
+  <path d="M60 28 C50 28, 38 35, 35 48 C32 62, 40 72, 50 72 C55 72, 60 68, 60 60 C60 68, 65 72, 70 72 C80 72, 88 62, 85 48 C82 35, 70 28, 60 28Z" fill="white"/>
+  <path d="M55 48 C55 42, 60 38, 60 38 C60 38, 65 42, 65 48 C65 52, 62 55, 60 55 C58 55, 55 52, 55 48Z" fill="#5C0632"/>
+  <text x="60" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">QATAR</text>
+  <text x="60" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#D4A853">AIRWAYS</text>
+</svg>
