@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#002244"/>
+  <path d="M30 45 L90 40 L85 48 L45 52 L80 58 L72 65 L35 55 L30 45Z" fill="#D4AF37"/>
+  <path d="M40 54 Q65 62 70 75 Q55 72 45 64 Z" fill="#D4AF37"/>
+  <text x="60" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="white">SINGAPORE</text>
+</svg>

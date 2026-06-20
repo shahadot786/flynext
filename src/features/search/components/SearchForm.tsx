@@ -156,7 +156,7 @@ function SearchFormClient({ className, onSubmitSuccess }: SearchFormProps) {
         className,
       )}
     >
-      {/* 1. Desktop Header Row: Trip Type on left, Travellers & Cabin Class on right */}
+      {/* 1. Desktop Header Row: Trip Type on left, Passengers & Cabin Class on right */}
       <div className="hidden md:flex items-center justify-between gap-4 mb-6">
         {/* Left: Trip Type Selector */}
         <TripTypeSelector

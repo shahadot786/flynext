@@ -1,0 +1,8 @@
+[
+  { "id": "standard", "name": "Standard Meal", "description": "Regular in-flight meal with chicken or fish", "icon": "🍽️" },
+  { "id": "vegetarian", "name": "Vegetarian Meal", "description": "Lacto-ovo vegetarian meal", "icon": "🥗" },
+  { "id": "vegan", "name": "Vegan Meal", "description": "Plant-based meal with no animal products", "icon": "🌱" },
+  { "id": "halal", "name": "Halal Meal", "description": "Prepared according to Islamic dietary guidelines", "icon": "🍖" },
+  { "id": "kosher", "name": "Kosher Meal", "description": "Prepared according to Jewish dietary laws", "icon": "✡️" },
+  { "id": "none", "name": "No Meal", "description": "Opt out of in-flight meal service", "icon": "❌" }
+]

@@ -1,38 +1,88 @@
 /**
- * Format a date string for display.
- * @example formatDate('2026-07-01') → "Tue, Jul 1, 2026"
- * @example formatDateShort('2026-07-01') → "Jul 1"
- * @example formatTime('2026-07-01T08:00:00') → "08:00"
+ * Date & Time Formatting Utilities
  */
 
-export function formatDate(dateString: string): string {
+function formatDateWithOptions(
+  dateString: string | undefined,
+  options: Intl.DateTimeFormatOptions,
+): string {
+  if (!dateString) return "";
+
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
+
+  return date.toLocaleDateString("en-US", options);
 }
 
-export function formatDateShort(dateString: string): string {
+function formatTimeWithOptions(
+  dateString: string | undefined,
+  options: Intl.DateTimeFormatOptions,
+): string {
+  if (!dateString) return "";
+
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-  });
+
+  return date.toLocaleTimeString("en-US", options);
 }
 
-export function formatTime(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
+export const formatDate = (dateString: string): string =>
+  formatDateWithOptions(dateString, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+export const formatDateShort = (dateString: string): string =>
+  formatDateWithOptions(dateString, {
+    month: "short",
+    day: "numeric",
+  });
+
+export const getDayOfWeek = (dateString: string): string =>
+  formatDateWithOptions(dateString, {
+    weekday: "long",
+  });
+
+export const formatTime = (dateString: string): string =>
+  formatTimeWithOptions(dateString, {
+    hour: "2-digit",
+    minute: "2-digit",
     hour12: false,
   });
-}
 
-export function getDayOfWeek(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { weekday: 'long' });
-}
+export const formatTicketDate = (dateString?: string): string =>
+  formatDateWithOptions(dateString, {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+export const formatTicketDateShort = (dateString?: string): string =>
+  formatDateWithOptions(dateString, {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
+export const formatTicketTime = (dateString?: string): string =>
+  formatTimeWithOptions(dateString, {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+// Reuse for booking dates/times instead of separate implementations
+export const formatBookingDate = (dateString: string): string =>
+  formatDateWithOptions(dateString, {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+export const formatBookingTime = (dateString: string): string =>
+  formatTimeWithOptions(dateString, {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });

@@ -1,0 +1,8 @@
+[
+  { "id": "bag_0", "weightKg": 0, "label": "No Extra Baggage", "price": { "amount": 0, "currency": "BDT" } },
+  { "id": "bag_5", "weightKg": 5, "label": "+5 Kg", "price": { "amount": 1500, "currency": "BDT" } },
+  { "id": "bag_10", "weightKg": 10, "label": "+10 Kg", "price": { "amount": 2800, "currency": "BDT" } },
+  { "id": "bag_15", "weightKg": 15, "label": "+15 Kg", "price": { "amount": 4000, "currency": "BDT" } },
+  { "id": "bag_20", "weightKg": 20, "label": "+20 Kg", "price": { "amount": 5200, "currency": "BDT" } },
+  { "id": "bag_30", "weightKg": 30, "label": "+30 Kg", "price": { "amount": 7500, "currency": "BDT" } }
+]

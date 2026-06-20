@@ -3,38 +3,65 @@
 import { useEffect, useState } from "react";
 
 type SessionTimerProps = {
+  startedAt?: number | null;
   initialMinutes?: number;
-  onExpire: () => void;
-  isLoading: boolean;
-  variant?: "card" | "bar";
+  onExpire?: () => void;
+  isLoading?: boolean;
+  variant?: "card" | "bar" | "inline";
 };
 
 export function SessionTimer({
+  startedAt,
   initialMinutes = 30,
   onExpire,
-  isLoading,
+  isLoading = false,
   variant = "card",
 }: SessionTimerProps) {
-  const [secondsLeft, setSecondsLeft] = useState(initialMinutes * 60);
+  const [secondsLeft, setSecondsLeft] = useState(() => {
+    if (startedAt) {
+      const elapsedMs = Date.now() - startedAt;
+      const totalMs = initialMinutes * 60 * 1000;
+      return Math.max(0, Math.floor((totalMs - elapsedMs) / 1000));
+    }
+    return initialMinutes * 60;
+  });
 
   useEffect(() => {
     if (isLoading) {
       return;
     }
 
+    // Check if already expired on mount/updates
+    const initialElapsedMs = startedAt ? Date.now() - startedAt : 0;
+    const initialTotalMs = initialMinutes * 60 * 1000;
+    const initialLeft = startedAt
+      ? Math.max(0, Math.floor((initialTotalMs - initialElapsedMs) / 1000))
+      : initialMinutes * 60;
+
+    if (initialLeft <= 0) {
+      onExpire?.();
+      return;
+    }
+
     const interval = setInterval(() => {
       setSecondsLeft((prev) => {
-        if (prev <= 1) {
+        let nextValue = prev - 1;
+        if (startedAt) {
+          const elapsedMs = Date.now() - startedAt;
+          const totalMs = initialMinutes * 60 * 1000;
+          nextValue = Math.max(0, Math.floor((totalMs - elapsedMs) / 1000));
+        }
+        if (nextValue <= 0) {
           clearInterval(interval);
-          onExpire();
+          onExpire?.();
           return 0;
         }
-        return prev - 1;
+        return nextValue;
       });
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isLoading, onExpire, initialMinutes]);
+  }, [isLoading, onExpire, initialMinutes, startedAt]);
 
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
@@ -57,6 +84,30 @@ export function SessionTimer({
           />
         </svg>
         <span>Remaining {timeStr}</span>
+      </div>
+    );
+  }
+
+  if (variant === "inline") {
+    return (
+      <div className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 px-3 py-1.5 rounded-full border border-amber-200 text-xs font-bold shadow-sm select-none">
+        <svg
+          className="h-3.5 w-3.5 text-amber-500 shrink-0"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+        <span>
+          Session expires in:{" "}
+          <span className="tabular-nums font-extrabold">{timeStr}</span>
+        </span>
       </div>
     );
   }
