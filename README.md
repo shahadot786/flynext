@@ -8,15 +8,15 @@
 
 ### 💻 Web View
 
-| Home / Search                          | Results & Filters                                         | Multi-step Booking                                |
-| -------------------------------------- | --------------------------------------------------------- | ------------------------------------------------- |
-| ![Web Home](/screenshots/web-home.png) | ![Web Search Results](/screenshots/web-search-result.png) | ![Web Booking Form](/screenshots/web-booking.png) |
+| Home / Search                                 | Results & Filters                                                | Multi-step Booking                                       |
+| --------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------- |
+| ![Web Home](/public/screenshots/web-home.png) | ![Web Search Results](/public/screenshots/web-search-result.png) | ![Web Booking Form](/public/screenshots/web-booking.png) |
 
 ### 📱 Mobile View
 
-| Home / Search                                | Results & Filters                                               | Multi-step Booking                                      |
-| -------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------- |
-| ![Mobile Home](/screenshots/mobile-home.png) | ![Mobile Search Results](/screenshots/mobile-search-result.png) | ![Mobile Booking Form](/screenshots/mobile-booking.png) |
+| Home / Search                                       | Results & Filters                                                      | Multi-step Booking                                             |
+| --------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------- |
+| ![Mobile Home](/public/screenshots/mobile-home.png) | ![Mobile Search Results](/public/screenshots/mobile-search-result.png) | ![Mobile Booking Form](/public/screenshots/mobile-booking.png) |
 
 ---
 

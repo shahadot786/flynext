@@ -87,20 +87,24 @@
 Here are the system diagrams illustrating the core architectural qualities of the FlyNext application:
 
 ### ⚡ Performance
+
 This diagram illustrates the optimization and performance benchmarks of FlyNext (caching, skeleton loading, Next.js build optimization):
-![Performance Diagram](/diagrams/PERFORMANCE.png)
+![Performance Diagram](/public/diagrams/PERFORMANCE.png)
 
 ### 📈 Scalability
+
 This diagram details how the modular features layout and component isolation support scaling the codebase:
-![Scalability Diagram](/diagrams/SCALABILITY.png)
+![Scalability Diagram](/public/diagrams/SCALABILITY.png)
 
 ### 🛠️ Maintainability
+
 This diagram visualizes the separation of concerns, test automation setup, and strict type derivations from schemas:
-![Maintainability Diagram](/diagrams/MAINTAINABILITY.png)
+![Maintainability Diagram](/public/diagrams/MAINTAINABILITY.png)
 
 ### 👥 Usability
+
 This diagram details the responsive UI layout design, mobile-first headers, interactive navigation, and form validation flows:
-![Usability Diagram](/diagrams/USABILITY.png)
+![Usability Diagram](/public/diagrams/USABILITY.png)
 
 ---
 
@@ -493,46 +497,56 @@ yarn test:run      # (or vitest run) Runs tests once and exits (CI mode)
 Every technical decision carries a cost. Below is the defense of the architectural decisions made in FlyNext.
 
 ### 🔌 14.1 Fetch API vs. Axios
-* **Comparison**: Native `fetch` natively integrates with Next.js request deduplication and caching, while `axios` requires custom adapters and increases bundle size.
-* **Defense**: *"We used native `fetch` inside a typed wrapper (`flightService.ts`) to avoid adding unnecessary library bloat while remaining compatible with Next.js's native caching layer."*
+
+- **Comparison**: Native `fetch` natively integrates with Next.js request deduplication and caching, while `axios` requires custom adapters and increases bundle size.
+- **Defense**: _"We used native `fetch` inside a typed wrapper (`flightService.ts`) to avoid adding unnecessary library bloat while remaining compatible with Next.js's native caching layer."_
 
 ### ⚡ 14.2 Next.js App Router vs. Pages Router
-* **Comparison**: App Router supports native React Server Components (RSC) and Streaming SSR out of the box, with a steeper learning curve than Pages Router.
-* **Defense**: *"App Router allows fetching flight data server-side, eliminating client-side fetch waterfalls. The initial HTML arrives with results embedded, optimizing LCP. The trade-off is a steeper mental model, but it represents the future of Next.js."*
+
+- **Comparison**: App Router supports native React Server Components (RSC) and Streaming SSR out of the box, with a steeper learning curve than Pages Router.
+- **Defense**: _"App Router allows fetching flight data server-side, eliminating client-side fetch waterfalls. The initial HTML arrives with results embedded, optimizing LCP. The trade-off is a steeper mental model, but it represents the future of Next.js."_
 
 ### 🗄️ 14.3 TanStack Query vs. SWR vs. Manual `useEffect`
-* **Comparison**: TanStack Query provides rich client caching, automatic garbage collection, and devtools. `SWR` is lighter but less feature-rich; `useEffect` is manual and prone to race conditions.
-* **Defense**: *"TanStack Query prevents stale-state and race-condition bugs (where a slow response overwrites a fast one). Intelligent query caching is critical for search apps where searches are frequently repeated."*
+
+- **Comparison**: TanStack Query provides rich client caching, automatic garbage collection, and devtools. `SWR` is lighter but less feature-rich; `useEffect` is manual and prone to race conditions.
+- **Defense**: _"TanStack Query prevents stale-state and race-condition bugs (where a slow response overwrites a fast one). Intelligent query caching is critical for search apps where searches are frequently repeated."_
 
 ### 🧠 14.4 Zustand vs. Redux Toolkit vs. React Context
-* **Comparison**: Zustand has minimal boilerplate and selective re-renders. Redux Toolkit is overkill for this scope; React Context triggers full subtree re-renders.
-* **Defense**: *"Zustand holds selected flight and cross-step booking state. Context would trigger global re-renders on every passenger keystroke. Redux Toolkit is too heavy for single-engineer developer velocity. Zustand gives Redux's subscription benefits at 10% of the complexity."*
+
+- **Comparison**: Zustand has minimal boilerplate and selective re-renders. Redux Toolkit is overkill for this scope; React Context triggers full subtree re-renders.
+- **Defense**: _"Zustand holds selected flight and cross-step booking state. Context would trigger global re-renders on every passenger keystroke. Redux Toolkit is too heavy for single-engineer developer velocity. Zustand gives Redux's subscription benefits at 10% of the complexity."_
 
 ### 📑 14.5 React Hook Form vs. Controlled Inputs vs. Formik
-* **Comparison**: React Hook Form uses uncontrolled inputs for zero re-renders on keystrokes. Controlled inputs and Formik re-render the entire form per keystroke.
-* **Defense**: *"The booking form contains many fields per passenger. Uncontrolled inputs keep form interaction smooth by avoiding full-component re-renders during text entry. Zod schemas handle validation validation seamlessly."*
+
+- **Comparison**: React Hook Form uses uncontrolled inputs for zero re-renders on keystrokes. Controlled inputs and Formik re-render the entire form per keystroke.
+- **Defense**: _"The booking form contains many fields per passenger. Uncontrolled inputs keep form interaction smooth by avoiding full-component re-renders during text entry. Zod schemas handle validation validation seamlessly."_
 
 ### 💎 14.6 Zod vs. Yup for Validation
-* **Comparison**: Zod offers native TypeScript type inference. Yup requires manually syncing TypeScript interfaces with schema objects.
-* **Defense**: *"Zod provides type-safety for free. `z.infer<typeof Schema>` derives TypeScript types directly from schemas, ensuring a single source of truth and zero duplication."*
+
+- **Comparison**: Zod offers native TypeScript type inference. Yup requires manually syncing TypeScript interfaces with schema objects.
+- **Defense**: _"Zod provides type-safety for free. `z.infer<typeof Schema>` derives TypeScript types directly from schemas, ensuring a single source of truth and zero duplication."_
 
 ### 🌐 14.7 Next.js Mock API Route Handlers vs. Static JSON Import
-* **Comparison**: Route Handlers simulate network latency, HTTP errors, and request headers. Importing local JSON files directly is trivial but makes simulating state transitions hard.
-* **Defense**: *"Using Next.js Route Handlers (`/api/flights`) maintains a clean separation of concerns. The front-end communicates with mock endpoints exactly as it would with a live backend. In tests, MSW intercepts these network requests seamlessly."*
+
+- **Comparison**: Route Handlers simulate network latency, HTTP errors, and request headers. Importing local JSON files directly is trivial but makes simulating state transitions hard.
+- **Defense**: _"Using Next.js Route Handlers (`/api/flights`) maintains a clean separation of concerns. The front-end communicates with mock endpoints exactly as it would with a live backend. In tests, MSW intercepts these network requests seamlessly."_
 
 ### 💾 14.8 Static JSON Mock Files vs. Live External Database
-* **Comparison**: Mock JSON files eliminate database latency and configuration overhead. Creating a live DB requires DB servers and complex config.
-* **Defense**: *"Mock JSON files eliminate database latency and configuration overhead. It creates a deterministic state for MSW integration and unit testing. The route handlers preserve standard API contracts so that an external DB can be integrated seamlessly in the future."*
+
+- **Comparison**: Mock JSON files eliminate database latency and configuration overhead. Creating a live DB requires DB servers and complex config.
+- **Defense**: _"Mock JSON files eliminate database latency and configuration overhead. It creates a deterministic state for MSW integration and unit testing. The route handlers preserve standard API contracts so that an external DB can be integrated seamlessly in the future."_
 
 ### 🎨 14.9 Tailwind CSS v4 vs. CSS Modules vs. CSS-in-JS
-* **Comparison**: Tailwind CSS has zero runtime overhead and works natively in Server Components. CSS Modules are separate files; CSS-in-JS (styled-components) is incompatible with RSC and has runtime bundle overhead.
-* **Defense**: *"Tailwind generates static stylesheets at build time, preserving Server Component compatibility and maximizing LCP. Dynamic class compositions are managed using the `cn()` helper."*
+
+- **Comparison**: Tailwind CSS has zero runtime overhead and works natively in Server Components. CSS Modules are separate files; CSS-in-JS (styled-components) is incompatible with RSC and has runtime bundle overhead.
+- **Defense**: _"Tailwind generates static stylesheets at build time, preserving Server Component compatibility and maximizing LCP. Dynamic class compositions are managed using the `cn()` helper."_
 
 ### 📑 14.10 Single-Page Progressive Forms vs. Multi-Page Routing
-* **Comparison**: Single-page progressive tabs keep intermediate passenger entries secure and warm in state memory without complex form-state persistence across server page transitions.
-* **Defense**: *"Single-page progressive tabs keep intermediate passenger entries secure and warm in state memory without writing guest data to server tables or cookies, bypassing database synchronizations until final checkout."*
+
+- **Comparison**: Single-page progressive tabs keep intermediate passenger entries secure and warm in state memory without complex form-state persistence across server page transitions.
+- **Defense**: _"Single-page progressive tabs keep intermediate passenger entries secure and warm in state memory without writing guest data to server tables or cookies, bypassing database synchronizations until final checkout."_
 
 ### 🪟 14.11 Virtualization vs. Pagination/Render-All for Results
-* **Comparison**: Virtualization keeps DOM nodes constant for large lists (100+ items). Pagination splits lists; rendering all works fine for small lists (under 50 items).
-* **Defense**: *"With only 30 mock flights, virtualization or complex pagination would be premature optimization. We memoized the filtered flight lists to maintain fast render times. For a real production app with 200+ flights, virtualized lists (react-window) would be introduced."*
 
+- **Comparison**: Virtualization keeps DOM nodes constant for large lists (100+ items). Pagination splits lists; rendering all works fine for small lists (under 50 items).
+- **Defense**: _"With only 30 mock flights, virtualization or complex pagination would be premature optimization. We memoized the filtered flight lists to maintain fast render times. For a real production app with 200+ flights, virtualized lists (react-window) would be introduced."_
