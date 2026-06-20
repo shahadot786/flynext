@@ -1243,7 +1243,7 @@ export const FlightCard = memo(function FlightCard({
                   closeBottomSheet();
                   onSelect(flight);
                 }}
-                className="bg-[#f97316] hover:bg-orange-600 text-white font-extrabold px-5.5 py-3 rounded-full text-xs shadow-md transition-all flex items-center gap-1 cursor-pointer select-none"
+                className="bg-blue-600 hover:bg-orange-600 text-white font-extrabold px-5.5 py-3 rounded-full text-xs shadow-md transition-all flex items-center gap-1 cursor-pointer select-none"
               >
                 <span>Select Flight</span>
                 <svg

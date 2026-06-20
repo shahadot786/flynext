@@ -38,10 +38,12 @@ export const FlightSegmentSchema = z.object({
   departure: z.object({
     airport: AirportSchema,
     time: z.string(), // ISO datetime
+    terminal: z.string().optional(),
   }),
   arrival: z.object({
     airport: AirportSchema,
     time: z.string(), // ISO datetime
+    terminal: z.string().optional(),
   }),
   durationMinutes: z.number(),
 });
@@ -270,3 +272,42 @@ export const ERROR_MESSAGES: Record<number, string> = {
   500: "Something went wrong on our end. We're working on it.",
   503: "Flight search is temporarily unavailable. Please try again in a moment.",
 };
+
+export interface SavedBooking {
+  bookingId: string;
+  flight: Flight;
+  passengerCount: PassengerCount;
+  formData: {
+    passengers: Array<{
+      givenName: string;
+      surname: string;
+      gender: "male" | "female" | "other";
+      nationality: string;
+      dateOfBirth: string;
+      phoneCode: string;
+      phoneNumber: string;
+      email: string;
+      postCode: string;
+    }>;
+    addOns: Array<{
+      mealType: string;
+      wheelchairRequired: boolean;
+      insuranceId: string;
+      specialRequests?: string;
+    }>;
+    baggage: Array<{
+      extraBaggageId: string;
+    }>;
+    seats: Array<{
+      seatNumber?: string;
+    }>;
+    payment: {
+      cardholderName: string;
+      cardNumber: string;
+      expiryDate: string;
+      cvv: string;
+    };
+  };
+  createdAt: string;
+  totalPrice: number;
+}

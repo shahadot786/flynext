@@ -199,6 +199,18 @@ body:has(.search-page-container) footer {
   display: none;
 }
 
+/* Hide footer on booking pages */
+body:has(.booking-page-container) footer {
+  display: none;
+}
+
+/* Hide global navbar on mobile/webview for booking pages to avoid double headers */
+@media (max-width: 1023px) {
+  body:has(.booking-page-container) header {
+    display: none;
+  }
+}
+
 /* Hide scrollbars completely */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

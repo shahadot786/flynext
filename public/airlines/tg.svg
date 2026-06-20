@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#4B0F54"/>
+  <path d="M30 50 C50 35, 75 35, 90 40 C75 55, 55 65, 35 70 C30 58, 30 50, 30 50Z" fill="#F0A800"/>
+  <path d="M40 60 C55 50, 75 50, 85 55 C72 68, 55 75, 42 78 C38 68, 40 60, 40 60Z" fill="#E01A60"/>
+  <text x="60" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">THAI</text>
+</svg>

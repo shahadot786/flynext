@@ -65,7 +65,7 @@ export function Navbar() {
                 <div className="absolute right-0 mt-2 w-48 rounded-xl border border-gray-200 bg-white shadow-xl shadow-gray-200/50 py-1.5 z-50 animate-fade-in">
                   {/* My Bookings */}
                   <Link
-                    href="#"
+                    href="/my-bookings"
                     onClick={() => setIsProfileOpen(false)}
                     className="flex items-center gap-2.5 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors"
                   >

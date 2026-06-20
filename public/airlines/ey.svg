@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="16" fill="#131921"/>
+  <path d="M40 35 L60 55 L80 35 L60 75 Z" fill="#D4AF37" opacity="0.8"/>
+  <path d="M45 40 L60 55 L75 40 L60 65 Z" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M60 55 L60 75 L80 35 Z" fill="#C5A059"/>
+  <text x="60" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#D4AF37">ETIHAD</text>
+</svg>

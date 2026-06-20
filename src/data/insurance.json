@@ -1,0 +1,48 @@
+[
+  {
+    "id": "none",
+    "name": "No Insurance",
+    "description": "Continue without travel insurance",
+    "price": { "amount": 0, "currency": "BDT" },
+    "features": []
+  },
+  {
+    "id": "basic",
+    "name": "Basic Cover",
+    "description": "Essential trip protection for peace of mind",
+    "price": { "amount": 350, "currency": "BDT" },
+    "features": [
+      "Trip cancellation up to ৳50,000",
+      "Flight delay compensation",
+      "Lost baggage up to ৳25,000"
+    ]
+  },
+  {
+    "id": "standard",
+    "name": "Standard Cover",
+    "description": "Comprehensive protection with medical coverage",
+    "price": { "amount": 750, "currency": "BDT" },
+    "features": [
+      "Trip cancellation up to ৳1,00,000",
+      "Flight delay compensation",
+      "Lost baggage up to ৳50,000",
+      "Medical emergency up to ৳2,00,000",
+      "24/7 assistance hotline"
+    ]
+  },
+  {
+    "id": "premium",
+    "name": "Premium Cover",
+    "description": "Maximum protection with full medical and travel coverage",
+    "price": { "amount": 1500, "currency": "BDT" },
+    "features": [
+      "Trip cancellation up to ৳3,00,000",
+      "Flight delay compensation",
+      "Lost baggage up to ৳1,00,000",
+      "Medical emergency up to ৳10,00,000",
+      "24/7 premium assistance",
+      "Hotel rebooking assistance",
+      "Personal liability cover"
+    ]
+  }
+]
