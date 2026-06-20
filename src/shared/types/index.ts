@@ -50,7 +50,7 @@ export type FlightSegment = z.infer<typeof FlightSegmentSchema>;
 
 // ─── Flight ────────────────────────────────────────────────
 
-export const CabinClassSchema = z.enum(['economy', 'business', 'first']);
+export const CabinClassSchema = z.enum(['economy', 'premium-economy', 'business', 'first']);
 export type CabinClass = z.infer<typeof CabinClassSchema>;
 
 export const FlightSchema = z.object({
@@ -92,6 +92,7 @@ export type Passenger = z.infer<typeof PassengerSchema>;
 export const PassengerCountSchema = z.object({
   adults: z.number().min(1).max(9),
   children: z.number().min(0).max(9),
+  kids: z.number().min(0).max(9).default(0),
   infants: z.number().min(0).max(9),
 });
 
@@ -230,8 +231,10 @@ export type FlightSearchParams = {
   origin: string;
   destination: string;
   date: string;
+  returnDate?: string;
   adults: number;
   children: number;
+  kids: number;
   infants: number;
   cabin: CabinClass;
 };

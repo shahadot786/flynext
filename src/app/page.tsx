@@ -1,29 +1,45 @@
+import { SearchForm } from "@/features/search";
+import popularRoutes from "@/data/popularRoutes.json";
+import features from "@/data/features.json";
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1">
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center px-4 py-20 sm:py-28 lg:py-36 bg-linear-to-br from-primary-50 via-white to-primary-50/30">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
-            Find Your <span className="text-primary-500">Next Flight</span>
+      {/* Hero Video Banner Section */}
+      <section className="relative w-full h-75 sm:h-87.5 lg:h-95 overflow-hidden flex items-center">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source
+            src="https://assets.sharetrip.net/hero-bg-cover.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/55" />
+
+        {/* Text content inside the video banner */}
+        <div className="relative max-w-5xl mx-auto px-4 w-full z-10 text-left">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)] leading-tight">
+            Welcome to <span className="font-black text-white">FlyNext!</span>
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-gray-600 max-w-xl mx-auto">
-            Search 50+ routes across top airlines. Compare prices, filter
-            results, and book in minutes.
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/95 font-medium max-w-xl drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
+            Find Flights, Hotels, Visa & Holidays
           </p>
         </div>
+      </section>
 
-        {/* Search Form Placeholder — will be replaced in PR 2 */}
-        <div className="mt-10 w-full max-w-4xl mx-auto rounded-2xl bg-white shadow-xl shadow-gray-200/50 border border-gray-100 p-6 sm:p-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="h-12 rounded-lg bg-gray-100 animate-skeleton" />
-            <div className="h-12 rounded-lg bg-gray-100 animate-skeleton" />
-            <div className="h-12 rounded-lg bg-gray-100 animate-skeleton" />
-            <div className="h-12 rounded-lg bg-primary-500/20 animate-skeleton" />
-          </div>
-          <p className="mt-4 text-sm text-gray-400 text-center">
-            Search form coming in PR 2
-          </p>
+      {/* Overlapping Search Form Container */}
+      <section className="relative w-full px-4 -mt-20 sm:-mt-24 lg:-mt-28 mb-16">
+        <div className="w-full max-w-5xl mx-auto">
+          <SearchForm />
         </div>
       </section>
 
@@ -37,29 +53,10 @@ export default function Home() {
             Most searched flight routes this month
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                from: "Dhaka",
-                to: "Dubai",
-                code: "DAC → DXB",
-                price: "৳32,500",
-              },
-              {
-                from: "Dhaka",
-                to: "Doha",
-                code: "DAC → DOH",
-                price: "৳38,000",
-              },
-              {
-                from: "Dhaka",
-                to: "Singapore",
-                code: "DAC → SIN",
-                price: "৳28,000",
-              },
-            ].map((route) => (
+            {popularRoutes?.map((route) => (
               <div
                 key={route.code}
-                className="group relative rounded-xl border border-gray-200 p-6 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-100/30 transition-all duration-300 cursor-pointer"
+                className="group relative rounded-xl border border-gray-200 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)] hover:border-blue-200 hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -90,26 +87,10 @@ export default function Home() {
             Why Choose FlyNext?
           </h2>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "✈️",
-                title: "Best Prices",
-                desc: "Compare fares across top airlines and find the lowest prices for your route.",
-              },
-              {
-                icon: "⚡",
-                title: "Instant Booking",
-                desc: "Book your flight in under 2 minutes with our streamlined booking flow.",
-              },
-              {
-                icon: "🛡️",
-                title: "Secure Payment",
-                desc: "Your payment information is protected with industry-standard encryption.",
-              },
-            ].map((feature) => (
+            {features?.map((feature) => (
               <div
                 key={feature.title}
-                className="flex flex-col items-center text-center p-6 rounded-xl bg-white border border-gray-100 shadow-sm"
+                className="flex flex-col items-center text-center p-6 rounded-xl bg-white border border-gray-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
               >
                 <span className="text-4xl mb-4">{feature.icon}</span>
                 <h3 className="text-lg font-semibold text-gray-900">
