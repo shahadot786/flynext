@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useMemo, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/shared/utils/cn";
 import { Button } from "@/shared/components/ui/Button";
 import { PassengerSelector } from "./PassengerSelector";
@@ -27,8 +27,9 @@ type SearchFormProps = {
   className?: string;
 };
 
-export function SearchForm({ className }: SearchFormProps) {
+function SearchFormClient({ className }: SearchFormProps) {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   // Pre-fill defaults: DAC to CXB, tomorrow to day-after-tomorrow
   const getOffsetDateString = (offsetDays: number): string => {
@@ -42,22 +43,38 @@ export function SearchForm({ className }: SearchFormProps) {
     [],
   );
 
+  const originParam = searchParams.get("origin");
+  const destParam = searchParams.get("destination");
+  const dateParam = searchParams.get("date");
+  const returnDateParam = searchParams.get("returnDate");
+  const adultsParam = searchParams.get("adults");
+  const childrenParam = searchParams.get("children");
+  const kidsParam = searchParams.get("kids");
+  const infantsParam = searchParams.get("infants");
+  const cabinParam = searchParams.get("cabin");
+
+  const [origin, setOrigin] = useState(() => originParam || "DAC");
+  const [destination, setDestination] = useState(() => destParam || "CXB");
+  const [departureDate, setDepartureDate] = useState(
+    () => dateParam || getOffsetDateString(1),
+  );
+  const [returnDate, setReturnDate] = useState(
+    () => returnDateParam || (dateParam ? "" : getOffsetDateString(3)),
+  );
   const [tripType, setTripType] = useState<
     "one-way" | "round-trip" | "multi-city"
-  >("round-trip");
-  const [origin, setOrigin] = useState("DAC");
-  const [destination, setDestination] = useState("CXB");
-  const [departureDate, setDepartureDate] = useState(() =>
-    getOffsetDateString(1),
+  >(() =>
+    returnDateParam ? "round-trip" : dateParam ? "one-way" : "round-trip",
   );
-  const [returnDate, setReturnDate] = useState(() => getOffsetDateString(3));
-  const [passengers, setPassengers] = useState<PassengerCount>({
-    adults: 1,
-    children: 0,
-    kids: 0,
-    infants: 0,
-  });
-  const [cabin, setCabin] = useState<CabinClass>("economy");
+  const [passengers, setPassengers] = useState<PassengerCount>(() => ({
+    adults: Number(adultsParam) || 1,
+    children: Number(childrenParam) || 0,
+    kids: Number(kidsParam) || 0,
+    infants: Number(infantsParam) || 0,
+  }));
+  const [cabin, setCabin] = useState<CabinClass>(
+    () => (cabinParam as CabinClass) || "economy",
+  );
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSearching, setIsSearching] = useState(false);
 
@@ -307,5 +324,19 @@ export function SearchForm({ className }: SearchFormProps) {
         />
       )}
     </form>
+  );
+}
+
+export function SearchForm(props: SearchFormProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="h-70 w-full rounded-2xl bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-200/90 animate-pulse flex items-center justify-center text-gray-400 font-medium">
+          Loading search form...
+        </div>
+      }
+    >
+      <SearchFormClient {...props} />
+    </Suspense>
   );
 }
