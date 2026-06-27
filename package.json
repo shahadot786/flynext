@@ -11,6 +11,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@duffel/api": "^4.27.1",
     "@hookform/resolvers": "^5.1.1",
     "@tanstack/react-query": "^5.80.7",
     "clsx": "^2.1.1",

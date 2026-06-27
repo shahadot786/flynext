@@ -182,7 +182,7 @@ export function ResultsClient({
   };
 
   // ── Pagination Logic ─────────────────────────────────────
-  const itemsPerPage = 5;
+  const itemsPerPage = 20;
   const totalFlights = filteredFlights.length;
   const totalPages = Math.ceil(totalFlights / itemsPerPage);
 

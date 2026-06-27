@@ -153,6 +153,7 @@ export function BookingForm() {
           lastName: p.surname,
           dateOfBirth: p.dateOfBirth,
           nationality: p.nationality,
+          gender: p.gender,
         }));
 
         const apiExtras = formData.addOns.map((ao) => ({

@@ -88,6 +88,7 @@ export const PassengerSchema = z.object({
   lastName: z.string().min(2, "At least 2 characters").max(50, "Too long"),
   dateOfBirth: z.string(),
   nationality: z.string().min(2, "Required"),
+  gender: z.enum(["male", "female", "other"]).optional(),
   passportNumber: z.string().optional(),
   passportExpiry: z.string().optional(),
 });
